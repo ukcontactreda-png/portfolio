@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karim El Jaoui - Video Editor & Graphic Designer</title>
+    <title>Under Development - Karim El Jaoui</title>
     <style>
         * {
             margin: 0;
@@ -15,8 +15,11 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0f0a;
             color: #fff;
-            line-height: 1.6;
-            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
         
         body::before {
@@ -38,20 +41,15 @@
         }
         
         .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            padding: 80px 0 60px;
             text-align: center;
+            padding: 40px;
+            max-width: 600px;
         }
         
-        .avatar {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 30px;
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 40px;
             background: linear-gradient(135deg, #2d5016 0%, #3a7d2e 50%, #4caf50 100%);
             border-radius: 50%;
             display: flex;
@@ -62,7 +60,7 @@
             overflow: hidden;
         }
         
-        .avatar img {
+        .logo img {
             width: 120%;
             height: 120%;
             object-fit: cover;
@@ -74,804 +72,98 @@
         }
         
         h1 {
-            font-size: 56px;
-            margin-bottom: 15px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .title {
-            font-size: 24px;
-            color: #a0a0a0;
-            margin-bottom: 40px;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        
-        .nav-btn {
-            padding: 16px 40px;
-            background: rgba(255, 255, 255, 0.05);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-btn:hover {
-            transform: translateY(-5px);
-            border-color: rgba(76, 175, 80, 0.5);
-            box-shadow: 0 15px 50px rgba(76, 175, 80, 0.3);
-        }
-        
-        .nav-btn.primary {
-            background: linear-gradient(135deg, #2d5016 0%, #3a7d2e 100%);
-            border: none;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 80px 0;
-        }
-        
-        .stat-box {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .stat-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.2);
-        }
-        
-        .stat-number {
             font-size: 48px;
+            margin-bottom: 20px;
             font-weight: 700;
             background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            animation: fadeIn 1s ease;
         }
         
-        .stat-label {
-            color: #888;
+        .subtitle {
+            font-size: 20px;
+            color: #a0a0a0;
+            margin-bottom: 50px;
+            animation: fadeIn 1.5s ease;
         }
         
-        section {
-            margin: 120px 0;
-        }
-        
-        h2 {
-            font-size: 42px;
-            margin-bottom: 60px;
-            text-align: center;
-            font-weight: 700;
-        }
-        
-        .content-box {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 60px;
-            border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .content-box p {
-            margin-bottom: 25px;
-            font-size: 18px;
-            color: #b0b0b0;
-            line-height: 1.8;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .skill-category {
-            background: rgba(76, 175, 80, 0.05);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid rgba(76, 175, 80, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-            background: rgba(76, 175, 80, 0.1);
-        }
-        
-        .skill-category h3 {
-            color: #4caf50;
-            margin-bottom: 20px;
-            font-size: 22px;
-        }
-        
-        .skill-category ul {
-            list-style: none;
-        }
-        
-        .skill-category li {
-            padding: 10px 0;
-            color: #c0c0c0;
-        }
-        
-        .skill-category li:before {
-            content: "▹ ";
-            color: #4caf50;
-            font-weight: bold;
-        }
-        
-        .portfolio-section-title {
-            color: #4caf50;
-            margin: 60px 0 30px;
-            font-size: 28px;
-            text-align: center;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-        
-        .portfolio-item {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 80px rgba(76, 175, 80, 0.3);
-        }
-        
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            background: #000;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .portfolio-info {
-            padding: 25px;
-        }
-        
-        .portfolio-info h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-        
-        .portfolio-info .channel {
-            color: #4caf50;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .portfolio-info .type {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(76, 175, 80, 0.2);
-            border-radius: 20px;
-            font-size: 13px;
-            color: #4caf50;
-        }
-
-        .etsy-banner {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(45, 80, 22, 0.2));
-            padding: 50px;
-            border-radius: 30px;
-            text-align: center;
-            margin: 80px 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .etsy-banner h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .etsy-banner p {
-            color: #b0b0b0;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .etsy-btn {
-            display: inline-block;
-            padding: 18px 50px;
-            background: linear-gradient(135deg, #2d5016 0%, #3a7d2e 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
-        }
-
-        .etsy-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(76, 175, 80, 0.5);
-        }
-        
-        .payment-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .payment-method {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .payment-method:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(76, 175, 80, 0.2);
-        }
-        
-        .payment-header {
-            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(45, 80, 22, 0.2));
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .payment-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #2d5016, #3a7d2e);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-        }
-        
-        .payment-header h3 {
-            font-size: 24px;
-        }
-        
-        .payment-details {
-            padding: 35px;
-        }
-        
-        .detail-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .detail-row:last-child {
-            border-bottom: none;
-        }
-        
-        .label {
-            color: #888;
-            font-size: 14px;
-        }
-        
-        .value {
-            color: #fff;
-            text-align: right;
-        }
-        
-        .copy-text {
-            cursor: pointer;
-            transition: color 0.3s ease;
+        .status {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-        }
-        
-        .copy-text:hover {
-            color: #4caf50;
-        }
-        
-        .copy-hint {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .copy-text:hover .copy-hint {
-            opacity: 1;
-        }
-        
-        .payment-note {
-            background: rgba(76, 175, 80, 0.1);
-            padding: 20px;
-            border-radius: 15px;
-            margin-top: 25px;
-            border-left: 3px solid #4caf50;
-        }
-        
-        .payment-note p {
-            color: #b0b0b0;
-            font-size: 14px;
-        }
-        
-        .toast {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #2d5016, #3a7d2e);
-            color: white;
-            padding: 16px 24px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(76, 175, 80, 0.4);
-            display: none;
-            align-items: center;
             gap: 12px;
-            z-index: 1000;
-        }
-        
-        .toast.show {
-            display: flex;
-            animation: slideIn 0.3s ease;
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateX(400px); }
-            to { transform: translateX(0); }
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            gap: 15px;
-            padding: 25px;
-            border-radius: 15px;
-            background: rgba(76, 175, 80, 0.05);
-            border: 1px solid rgba(76, 175, 80, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
+            padding: 16px 32px;
             background: rgba(76, 175, 80, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #2d5016, #3a7d2e);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-        
-        .contact-details h3 {
-            font-size: 13px;
-            color: #888;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-        
-        .contact-details p {
-            color: #fff;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 50px;
             font-size: 16px;
+            color: #4caf50;
+            margin-bottom: 60px;
+            animation: fadeIn 2s ease;
         }
         
-        .contact-details a {
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #4caf50;
+            border-radius: 50%;
+            animation: pulse 2s ease infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .contact-info {
+            margin-top: 60px;
+            animation: fadeIn 2.5s ease;
+        }
+        
+        .contact-info p {
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .contact-link {
             color: #4caf50;
             text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
         
-        .contact-details a:hover {
+        .contact-link:hover {
             color: #8bc34a;
         }
         
-        footer {
-            text-align: center;
-            padding: 60px 0 40px;
-            color: #666;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: 120px;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @media (max-width: 768px) {
             h1 { font-size: 36px; }
-            h2 { font-size: 32px; }
-            .portfolio-grid, .payment-methods { grid-template-columns: 1fr; }
-            .content-box { padding: 40px 30px; }
-            .nav-buttons { flex-direction: column; }
-            .detail-row { flex-direction: column; gap: 5px; }
-            .value { text-align: left; }
-            .etsy-banner { padding: 30px 20px; }
-            .etsy-banner h3 { font-size: 24px; }
+            .subtitle { font-size: 18px; }
+            .container { padding: 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="toast" id="toast">
-        <span>✓</span>
-        <span id="toast-message">Copied to clipboard!</span>
-    </div>
-
     <div class="container">
-        <header>
-            <div class="avatar">
-                <img src="LOGOME.png" alt="Karim El Jaoui">
-            </div>
-            <h1>Karim El Jaoui</h1>
-            <p class="title">Video Editor & Graphic Designer</p>
-            
-            <div class="nav-buttons">
-                <a href="#about" class="nav-btn">📖 About</a>
-                <a href="#portfolio" class="nav-btn">🎬 Portfolio</a>
-                <a href="#payment" class="nav-btn">💰 Payment</a>
-                <a href="#contact" class="nav-btn primary">💬 Contact</a>
-            </div>
-        </header>
-        
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-number">100+</div>
-                <div class="stat-label">Projects Completed</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-box">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Client Satisfaction</div>
-            </div>
+        <div class="logo">
+            <img src="LOGOME.png" alt="Karim El Jaoui">
         </div>
         
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="content-box">
-                <p>Hey there! I'm a passionate video editor and graphic designer who's been turning creative ideas into reality for over 4 years. With more than 100 projects under my belt, I've learned that every frame tells a story, and I love being the one to help tell it.</p>
-                <p>What drives me? It's that moment when a client sees their vision come to life on screen. Whether it's a quick, punchy short or an in-depth documentary, I pour my heart into crafting content that doesn't just look good—it connects with people.</p>
-                <p>When I'm not deep in an editing session, you'll find me exploring new techniques, staying up-to-date with the latest trends, and always looking for ways to push creative boundaries. Let's create something incredible together!</p>
-                
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Video Editing</h3>
-                        <ul>
-                            <li>Adobe Premiere Pro</li>
-                            <li>Adobe After Effects</li>
-                            <li>DaVinci Resolve</li>
-                            <li>Final Cut Pro</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Graphic Design</h3>
-                        <ul>
-                            <li>Adobe Photoshop</li>
-                            <li>Adobe Illustrator</li>
-                            <li>Figma</li>
-                            <li>Canva Pro</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Specializations</h3>
-                        <ul>
-                            <li>YouTube Content</li>
-                            <li>Short-form Videos</li>
-                            <li>Motion Graphics</li>
-                            <li>Color Grading</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h1>Under Development</h1>
+        <p class="subtitle">Something amazing is coming soon</p>
         
-        <section id="portfolio">
-            <h2>Portfolio</h2>
-            
-            <h3 class="portfolio-section-title">Short-Form Content</h3>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/tT-BzWbyqkw" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Geography Short</h3>
-                        <p class="channel">Client: @geoalldayog</p>
-                        <span class="type">Short-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/yMplWGXdA3Q" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Geography Tales</h3>
-                        <p class="channel">Client: @GeoGlobeTales</p>
-                        <span class="type">Short-Form</span>
-                    </div>
-                </div>
-            </div>
+        <div class="status">
+            <span class="status-dot"></span>
+            <span>Working on it</span>
+        </div>
+        
 
-            <h3 class="portfolio-section-title">Thumbnail Design</h3>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/RIpFYvaFPP8" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Custom Thumbnail Design</h3>
-                        <p class="channel">Client: @TalkinBout-1706</p>
-                        <span class="type">Thumbnail</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/u9Ji_p0ODKk" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Professional Thumbnail</h3>
-                        <p class="channel">Client: @DeCode_Official</p>
-                        <span class="type">Thumbnail</span>
-                    </div>
-                </div>
-            </div>
-            
-            <h3 class="portfolio-section-title">Long-Form Content</h3>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/D6LbEwANCdI" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Full-Length Documentary</h3>
-                        <p class="channel">Client: @MrGreaves_</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/Q53D6_bgvsw" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>America Grows Series</h3>
-                        <p class="channel">Client: @americagrows</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/dRQ_wP8jPkM" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>UK History Rewind</h3>
-                        <p class="channel">Client: @UKRewindyt</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/T-zJQgilN3A" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Automotive History</h3>
-                        <p class="channel">Client: @WheelsHistory</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/0XER7s4xTrE" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Sports Analysis</h3>
-                        <p class="channel">Client: @NextGameUp_</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/4PZPrXlFAos" allowfullscreen></iframe>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Featured Project</h3>
-                        <p class="channel">Client Channel</p>
-                        <span class="type">Long-Form</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="etsy-banner">
-                <h3>🎨 Premium Editing Assets</h3>
-                <p>Get access to my professional After Effects bundle - 5000+ premium assets to elevate your videos!</p>
-                <a href="https://www.etsy.com/listing/4394502713/after-effect-assets-5000-mega-bundle" target="_blank" class="etsy-btn">Shop on Etsy 🛒</a>
-            </div>
-        </section>
-        
-        <section id="payment">
-            <h2>Payment Options</h2>
-            <div class="payment-methods">
-                <div class="payment-method">
-                    <div class="payment-header">
-                        <div class="payment-icon">🏦</div>
-                        <h3>Bank Transfer (ACH)</h3>
-                    </div>
-                    <div class="payment-details">
-                        <div class="detail-row">
-                            <span class="label">Bank Name</span>
-                            <span class="value">Citibank</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">Bank Address</span>
-                            <span class="value">111 Wall Street, New York, NY 10043, USA</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">Routing (ABA)</span>
-                            <span class="value copy-text" onclick="copyText('031100209')">
-                                031100209 <span class="copy-hint">📋</span>
-                            </span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">SWIFT Code</span>
-                            <span class="value copy-text" onclick="copyText('CITIUS33')">
-                                CITIUS33 <span class="copy-hint">📋</span>
-                            </span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">Account Number</span>
-                            <span class="value copy-text" onclick="copyText('70582160002059988')">
-                                70582160002059988 <span class="copy-hint">📋</span>
-                            </span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">Account Type</span>
-                            <span class="value">CHECKING</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="label">Beneficiary Name</span>
-                            <span class="value">KARIM EL JAOUI</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="payment-method">
-                    <div class="payment-header">
-                        <div class="payment-icon">💳</div>
-                        <h3>Payoneer</h3>
-                    </div>
-                    <div class="payment-details">
-                        <div class="detail-row">
-                            <span class="label">Payoneer Email</span>
-                            <span class="value copy-text" onclick="copyText('karimeljaoui0@gmail.com')">
-                                karimeljaoui0@gmail.com <span class="copy-hint">📋</span>
-                            </span>
-                        </div>
-                        <div class="payment-note">
-                            <p>Send payment to this email address through your Payoneer account. Fast, secure, and convenient for international transactions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Get In Touch</h2>
-            <div class="content-box">
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p><a href="mailto:karimeljaoui0@gmail.com" style="text-transform: uppercase;">karimeljaoui0@gmail.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+212696195948" style="text-transform: uppercase;">+212 696-195-948</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Address</h3>
-                            <p style="text-transform: uppercase;">Hay El Moukaouama App36 Imm13<br>Rabat 10106, Morocco</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">💼</div>
-                        <div class="contact-details">
-                            <h3>Business</h3>
-                            <p style="text-transform: uppercase;">Karim El Jaoui</p>
-                            <p style="font-size: 14px; color: #888; margin-top: 5px; text-transform: uppercase;">Video Editing & Graphic Design</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>&copy; 2025 Karim El Jaoui. All rights reserved.</p>
-            <p style="margin-top: 10px; font-size: 14px;">Professional Video Editor & Graphic Designer</p>
-        </footer>
     </div>
-
-    <script>
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                const toast = document.getElementById('toast');
-                const message = document.getElementById('toast-message');
-                message.textContent = 'Copied to clipboard!';
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 2000);
-            });
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
